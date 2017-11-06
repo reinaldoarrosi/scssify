@@ -1,6 +1,6 @@
 {
   "name": "scssify2",
-  "version": "1.0.0",
+  "version": "2.0.1",
   "description": "Sass browserify transformer (based on https://www.npmjs.com/package/scssify)",
   "repository": "reinaldoarrosi/scssify2",
   "main": "./lib/index.js",
@@ -26,16 +26,7 @@
   "engines": {
     "node": ">=4.0.0"
   },
-  "eslintConfig": {
-    "root": true,
-    "extends": "./node_modules/@cody-greene/eslint-config/strict.yml",
-    "env": {
-      "node": true,
-      "es6": true
-    }
-  },
   "devDependencies": {
-    "@cody-greene/eslint-config": "3.3.1",
     "autoprefixer": "^7.1.6",
     "jsdom": "^11.0.3",
     "mocha": "^4.0.1",
