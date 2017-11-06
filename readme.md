@@ -1,7 +1,7 @@
 ### scssify2
 Browserify transfomer to compile [sass][] stylesheets, and automatically inject `<style>` tags. Correctly informs [watchify][] about any `@imports` and also supports [postcss][] plugins. Sourcemaps are fully supported too!
 
-This module was forked from https://github.com/cody-greene/scssify to add features (mainly https://github.com/cody-greene/scssify/pull/28). If this pull request was merged you're better off using the original "scssify".
+This module was forked from https://github.com/cody-greene/scssify to add few missing features.
 
 > node >= 4.0.0
 
@@ -74,15 +74,9 @@ browserify('entry.js')
       }
     },
 
-    // Configure postcss options
-    // The object returned by this function will be passed as-is to postcss, 
-    // with the exception of "map.inline" and "map.prev" which are controlled
-    // according to "sass.sourceMapEmbed"
-    postcssOptions: function(file) {
-      return {
-        from: file,
-        to: file
-      }
+    postProcess: function(css) {
+      // allows for processing the generated CSS
+      return css;
     }
   })
   .bundle()
@@ -107,7 +101,7 @@ Example config using `package.json`:
 
 Command line usage:
 ```
-$ browserify MyComponent.js -t scssify >bundle.js
+$ browserify MyComponent.js -t scssify2 >bundle.js
 ```
 
 [sass]: http://sass-lang.com
